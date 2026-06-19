@@ -29,6 +29,11 @@ spring:
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 
+logging:
+  level:
+    org.springframework.kafka: DEBUG
+    org.apache.kafka.clients.consumer: DEBUG
+    org.springframework.kafka.listener.KafkaMessageListenerContainer: TRACE
           
 
 eureka:
