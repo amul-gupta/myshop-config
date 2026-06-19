@@ -26,11 +26,9 @@ spring:
     consumer:
       group-id: payment-group
       auto-offset-reset: earliest
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      properties:
-        spring.json.trusted.packages: "*"
-        spring.json.value.default.type: com.myshop.payment.event.OrderCreatedEvent
+
           
 
 eureka:
