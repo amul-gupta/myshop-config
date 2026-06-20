@@ -35,8 +35,6 @@ spring:
           json:
             trusted:
               packages: "*"
-            type:
-              mapping: com.myshop.order.event.OrderCreatedEvent:com.myshop.payment.event.OrderCreatedEvent
 
           
 
