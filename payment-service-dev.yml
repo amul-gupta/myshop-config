@@ -23,6 +23,7 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
+    
     consumer:
       group-id: payment-group
       auto-offset-reset: earliest
@@ -34,7 +35,8 @@ spring:
           json:
             trusted:
               packages: "*"
-
+            type:
+              mapping: com.myshop.order.event.OrderCreatedEvent:com.myshop.payment.event.OrderCreatedEvent
 
           
 
