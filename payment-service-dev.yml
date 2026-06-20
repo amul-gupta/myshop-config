@@ -17,7 +17,7 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
 
   kafka:
-    bootstrap-servers: localhost:29092
+    bootstrap-servers: localhost:9092
 
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -26,14 +26,16 @@ spring:
     consumer:
       group-id: payment-group
       auto-offset-reset: earliest
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+    
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: "*"
 
-logging:
-  level:
-    org.springframework.kafka: DEBUG
-    org.apache.kafka.clients.consumer: DEBUG
-    org.springframework.kafka.listener.KafkaMessageListenerContainer: TRACE
+
           
 
 eureka:
