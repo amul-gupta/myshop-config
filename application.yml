@@ -19,3 +19,11 @@ management:
 
     gateway:
       access: unrestricted
+
+
+logging:
+  file:
+    path: logs
+
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level [%X{traceId}] %logger{36} - %msg%n"
